@@ -11,5 +11,12 @@ public class Customer {
         this.currentBalance = currentBalance;
         this.name = name;
     }
+
+    public String getName() {
+        return this.name;
+    }
+    public double getCurrentBalance() {
+        return this.currentBalance;
+    }
 }
 
