@@ -1,3 +1,3 @@
-public interface shippable {
+public interface Shippable {
     public double getWeight();
 }
