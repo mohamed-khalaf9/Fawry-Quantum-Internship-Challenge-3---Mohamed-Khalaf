@@ -25,6 +25,17 @@ public abstract class Product {
         return this.price;
     }
 
+    public void reduceQuantity(int requiredQuantity) {
+        if(requiredQuantity < 0)
+            throw new IllegalArgumentException("Quantity cannot be negative");
+        if(requiredQuantity > this.quantity)
+            throw new IllegalArgumentException("Not enough products");
+
+        this.quantity -= requiredQuantity;
+
+
+    }
+
 
 
 
