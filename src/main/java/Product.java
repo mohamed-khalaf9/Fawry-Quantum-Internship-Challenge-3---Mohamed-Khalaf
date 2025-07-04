@@ -15,6 +15,16 @@ public abstract class Product {
         this.price = price;
     }
 
+    public String getName() {
+        return this.name;
+    }
+    public int getQuantity() {
+        return this.quantity;
+    }
+    public double getPrice() {
+        return this.price;
+    }
+
 
 
 
