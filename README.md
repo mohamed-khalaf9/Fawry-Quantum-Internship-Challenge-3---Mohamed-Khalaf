@@ -121,8 +121,7 @@ To ensure a clean, maintainable, and scalable design, I followed key object-orie
 ---
 
 ##  Demo Video (with voice)
-
-> [🔗 Link to demo video here]
+https://drive.google.com/file/d/1SMkMLOLJLfje5-LZuuTCz0JYpp-lbGc4/view?usp=sharing
 
 ---
 
