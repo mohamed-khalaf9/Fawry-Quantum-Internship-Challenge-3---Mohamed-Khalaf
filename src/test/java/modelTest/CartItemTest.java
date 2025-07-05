@@ -1,3 +1,8 @@
+package modelTest;
+
+import model.CartItem;
+import model.Product;
+import model.TV;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

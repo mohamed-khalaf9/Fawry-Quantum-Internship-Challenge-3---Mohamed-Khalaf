@@ -1,3 +1,6 @@
+package modelTest;
+
+import model.MobileScratchCard;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,7 +18,7 @@ class MobileScratchCardTest {
     void testEmptyNameThrowsException() {
         Exception e = assertThrows(IllegalArgumentException.class, () -> {
             new MobileScratchCard("", 5, 10.0);});
-        assertEquals("Product name cannot be empty", e.getMessage());
+        assertEquals("model.Product name cannot be empty", e.getMessage());
     }
 
     @Test

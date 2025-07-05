@@ -1,7 +1,13 @@
+package model;
+
+import interfaces.Expirable;
+import interfaces.Shippable;
+import interfaces.ShippableItem;
+
 import java.time.LocalDate;
 
 
-public class Cheese extends  Product implements Shippable, ShippableItem,Expirable {
+public class Cheese extends Product implements Shippable, ShippableItem, Expirable {
     private double weight;
     private LocalDate expiryDate;
 
