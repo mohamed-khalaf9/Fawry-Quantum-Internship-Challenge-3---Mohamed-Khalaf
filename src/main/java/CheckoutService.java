@@ -22,13 +22,24 @@ public class CheckoutService {
         validateCustomerBalance(customer, totalAmount);
         customer.withdraw(totalAmount);
 
+        updateStock(cartItems);
+
         ShippingService shippingService = new ShippingService();
         shippingService.ship(shippableItems);
+
 
         printCheckoutReceipt(cartItems, subtotal, shippingFees, totalAmount);
     }
 
     //::::::::::::::::::::::::::: Utilities :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    public void updateStock(List<CartItem> cartItems) {
+        for(CartItem cartItem : cartItems) {
+            int requestedQuantity = cartItem.getQuantity();
+            Product product = cartItem.getProduct();
+            product.reduceQuantity(requestedQuantity);
+        }
+    }
 
     public List<ShippableItem> getShippableItems(List<CartItem> cartItems) {
         List<ShippableItem> shippableItems = new ArrayList<>();
