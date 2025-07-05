@@ -27,4 +27,7 @@ public class Cart {
         items.add(item);
 
     }
+    public List<CartItem> getItems() {
+        return items;
+    }
 }
