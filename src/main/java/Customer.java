@@ -18,5 +18,13 @@ public class Customer {
     public double getCurrentBalance() {
         return this.currentBalance;
     }
+    public void withdraw(double amount) {
+        if(amount < 0)
+            throw new IllegalArgumentException("Invalid amount");
+        if(amount > currentBalance)
+            throw new IllegalArgumentException("Invalid amount");
+
+        this.currentBalance -= amount;
+    }
 }
 
