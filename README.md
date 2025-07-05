@@ -2,8 +2,18 @@
  # Fawry Rise Journey - Full Stack Development Internship Challenge --- mohamed.khalaf8340@gmail.com
 
 #  Fawry Rise Journey - E-Commerce System
-
 A console-based e-commerce system implemented in **Java** for the Fawry Full Stack Development Internship Challenge. The application models expiry, shippability, cart logic, and checkout processes, including real-world validation and behaviors.
+
+## Table of Contents
+
+- [Features](#features)
+- [Class Diagram](#class-diagram)
+- [Project Structure](#project-structure)
+- [Test Coverage](#test-coverage)
+- [Design Decisions](#design-decisions)
+- [Demo Video (with voice)](#demo-video-with-voice)
+- [How to Run](#how-to-run)
+- [Developed By](#developed-by)
 
 ---
 
@@ -47,7 +57,34 @@ A console-based e-commerce system implemented in **Java** for the Fawry Full Sta
 
 ![EcommerceFawry drawio](https://github.com/user-attachments/assets/577b4a2e-a216-4e56-b7ee-ceb743972ca9)
 
+
 ---
+
+### Project Structure
+
+```
+ecommerce-system/
+├── Product.java              # Abstract base class for all products
+├── Cheese.java               # Expirable and shippable product
+├── Biscuits.java             # Expirable product
+├── TV.java                   # Shippable product
+├── Mobile.java               # Shippable product
+├── MobileScratchCard.java    # Non-expirable, non-shippable product
+├── Cart.java                 # Handles adding and storing cart items
+├── CartItem.java             # Represents a product and its quantity in the cart
+├── Customer.java             # Represents a customer with a balance
+├── CheckoutService.java      # Handles the full checkout logic
+├── ShippingService.java      # Handles and prints shipping information
+├── EcommerceSystem.java      # Main class to run different use case scenarios
+├── Expirable.java            # Interface for products with expiry date
+├── Shippable.java            # Interface for products with weight
+├── ShippableItem.java        # Interface used by the shipping service
+├── test/                     # Contains unit test classes
+│   ├── ...                   # Tests for Cart, CheckoutService, Product, etc.
+```
+
+The project follows a flat structure for simplicity, keeping all core classes in a single package and tests in a separate `test/` directory.
+
 
 ##  Test Coverage
 
@@ -95,8 +132,7 @@ To ensure a clean, maintainable, and scalable design, I followed key object-orie
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/ecommerce-system.git
-   cd ecommerce-system
+   https://github.com/mohamed-khalaf9/Fawry-Quantum-Internship-Challenge-3---Mohamed-Khalaf.git
    ```
 
 2. **Compile the code**:
