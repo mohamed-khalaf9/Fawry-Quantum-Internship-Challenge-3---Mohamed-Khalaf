@@ -63,28 +63,45 @@ A console-based e-commerce system implemented in **Java** for the Fawry Full Sta
 ### Project Structure
 
 ```
-ecommerce-system/
-├── Product.java              # Abstract base class for all products
-├── Cheese.java               # Expirable and shippable product
-├── Biscuits.java             # Expirable product
-├── TV.java                   # Shippable product
-├── Mobile.java               # Shippable product
-├── MobileScratchCard.java    # Non-expirable, non-shippable product
-├── Cart.java                 # Handles adding and storing cart items
-├── CartItem.java             # Represents a product and its quantity in the cart
-├── Customer.java             # Represents a customer with a balance
-├── CheckoutService.java      # Handles the full checkout logic
-├── ShippingService.java      # Handles and prints shipping information
-├── EcommerceSystem.java      # Main class to run different use case scenarios
-├── Expirable.java            # Interface for products with expiry date
-├── Shippable.java            # Interface for products with weight
-├── ShippableItem.java        # Interface used by the shipping service
-├── test/                     # Contains unit test classes
-│   ├── ...                   # Tests for Cart, CheckoutService, Product, etc.
+E-commerce-Fawry-Internship/
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       ├── app/
+│   │       │   └── EcommerceSystem.java          # Main entry point with menu-driven UI
+│   │       ├── interface/
+│   │       │   ├── Expirable.java                # Interface for expirable products
+│   │       │   ├── Shippable.java                # Interface for products with weight
+│   │       │   └── ShippableItem.java            # Interface for items used in shipping
+│   │       ├── model/
+│   │       │   ├── Product.java                  # Abstract base class for all products
+│   │       │   ├── Cheese.java                   # Expirable and shippable product
+│   │       │   ├── Biscuits.java                 # Expirable product
+│   │       │   ├── TV.java                       # Shippable product
+│   │       │   ├── Mobile.java                   # Shippable product
+│   │       │   ├── MobileScratchCard.java        # Non-expirable, non-shippable product
+│   │       │   ├── CartItem.java                 # Represents a product + quantity in the cart
+│   │       │   └── Customer.java                 # Represents a customer with balance
+│   │       ├── service/
+│   │       │   ├── Cart.java                     # Manage cart items
+│   │       │   ├── CheckoutService.java          # Handles checkout logic
+│   │       │   └── ShippingService.java          # Handles shipment notice printing
+│   │       
+│
+│   └── test/
+│       └── java/
+│           ├── modelTest/
+│           │   ├── BiscuitsTest.java
+│           │   ├── CartItemTest.java
+│           │   ├── CartTest.java
+│           │   ├── CheeseTest.java
+│           │   ├── CustomerTest.java
+│           │   ├── MobileScratchCardTest.java
+│           │   └── TVTest.java
+│           └── serviceTest/
+│               ├── CheckoutServiceTest.java
+│               └── ShippingServiceTest.java
 ```
-
-The project follows a flat structure for simplicity, keeping all core classes in a single package and tests in a separate `test/` directory.
-
 
 ##  Test Coverage
 
