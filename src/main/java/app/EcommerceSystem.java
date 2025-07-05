@@ -1,3 +1,9 @@
+package app;
+import  model.*;
+import service.*;
+
+
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -13,10 +19,10 @@ public class EcommerceSystem {
         do {
             System.out.println("\n======= E-Commerce System Use Cases =======");
             System.out.println("1. Run Valid Use Case");
-            System.out.println("2. Run Empty Cart Case");
+            System.out.println("2. Run Empty service.Cart Case");
             System.out.println("3. Run Insufficient Balance Case");
             System.out.println("4. Run Out of Stock Case");
-            System.out.println("5. Run Expired Product Case");
+            System.out.println("5. Run Expired model.Product Case");
             System.out.println("0. Exit");
             System.out.print("Choose use case: ");
 
@@ -40,7 +46,7 @@ public class EcommerceSystem {
     public static void runValidUseCase() {
         System.out.println("\n--- Running Valid Use Case ---");
         try {
-            Cheese cheese = new Cheese("Cheddar Cheese", 10, 50.0, 0.5, LocalDate.now().plusDays(10));
+            Cheese cheese = new Cheese("Cheddar model.Cheese", 10, 50.0, 0.5, LocalDate.now().plusDays(10));
             TV tv = new TV("Samsung 42-inch", 5, 3000.0, 8.0);
             MobileScratchCard scratchCard = new MobileScratchCard("Orange Scratch Card", 20, 20.0);
             Customer customer = new Customer(10000.0, "Mohamed");
@@ -59,7 +65,7 @@ public class EcommerceSystem {
     }
 
     public static void runEmptyCartCase() {
-        System.out.println("\n--- Running Empty Cart Case ---");
+        System.out.println("\n--- Running Empty service.Cart Case ---");
         try {
             Customer customer = new Customer(1000.0, "Hassan");
             Cart cart = new Cart(); // empty cart
@@ -102,9 +108,9 @@ public class EcommerceSystem {
     }
 
     public static void runExpiredProductCase() {
-        System.out.println("\n--- Running Expired Product Case ---");
+        System.out.println("\n--- Running Expired model.Product Case ---");
         try {
-            Biscuits biscuits = new Biscuits("Expired Biscuits", 5, 10.0, LocalDate.now().minusDays(3));
+            Biscuits biscuits = new Biscuits("Expired model.Biscuits", 5, 10.0, LocalDate.now().minusDays(3));
             Customer customer = new Customer(1000.0, "Nour");
             Cart cart = new Cart();
 

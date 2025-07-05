@@ -1,5 +1,11 @@
+package serviceTest;
+
+import interfaces.ShippableItem;
+import model.Cheese;
+import model.TV;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import service.ShippingService;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -50,7 +56,7 @@ public class ShippingServiceTest {
 
     @Test
     void testShipWithMultipleDifferentItems() {
-        ShippableItem tv = new TV("LG TV", 3, 2500.0, 10.0);
+        ShippableItem tv = new TV("LG model.TV", 3, 2500.0, 10.0);
         ShippableItem cheese = new Cheese("Gouda", 5, 80.0, 0.5, LocalDate.now().plusDays(3));
 
         List<ShippableItem> items = List.of(tv, tv, cheese, cheese, cheese);
@@ -59,8 +65,8 @@ public class ShippingServiceTest {
 
         String result = output.toString().trim();
 
-        assertTrue(result.contains("2x LG TV 20000g"));     // 2 TVs * 10.0kg
-        assertTrue(result.contains("3x Gouda 1500g"));       // 3 Cheese * 0.5kg
+        assertTrue(result.contains("2x LG model.TV 20000g"));     // 2 TVs * 10.0kg
+        assertTrue(result.contains("3x Gouda 1500g"));       // 3 model.Cheese * 0.5kg
         assertTrue(result.contains("Total package weight 21.5kg"));
     }
 }

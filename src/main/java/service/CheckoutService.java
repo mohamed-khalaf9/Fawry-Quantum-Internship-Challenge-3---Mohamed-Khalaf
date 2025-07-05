@@ -1,6 +1,10 @@
+package service;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import model.*;
+import interfaces.*;
 
 public class CheckoutService {
     private static final double SHIPPING_FEES_PER_KG = 10.0;
@@ -10,7 +14,7 @@ public class CheckoutService {
 
         List<CartItem> cartItems = cart.getItems();
         if(cartItems.isEmpty())
-            throw new IllegalStateException("Cart is empty.");
+            throw new IllegalStateException("service.Cart is empty.");
 
         validateNoExpiredProductsExist(cartItems);
 
@@ -55,7 +59,7 @@ public class CheckoutService {
 
     private void validateInputs(Customer customer, Cart cart) {
         if (customer == null || cart == null) {
-            throw new IllegalArgumentException("Customer or cart cannot be null.");
+            throw new IllegalArgumentException("model.Customer or cart cannot be null.");
         }
     }
 

@@ -1,5 +1,12 @@
+package serviceTest;
+
+import interfaces.ShippableItem;
+import model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import service.Cart;
+import service.CheckoutService;
+
 
 import java.time.LocalDate;
 import java.util.List;
@@ -33,13 +40,13 @@ public class CheckoutServiceTest {
 
     @Test
     void testAddExpiredProductThrowsException() {
-        Product cheese = new Cheese("Old Cheese", 1, 100.0, 0.3, LocalDate.now().minusDays(1));
+        Product cheese = new Cheese("Old model.Cheese", 1, 100.0, 0.3, LocalDate.now().minusDays(1));
 
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             cart.add(cheese, 1);
         });
 
-        assertEquals("The Product is expired", exception.getMessage());
+        assertEquals("The model.Product is expired", exception.getMessage());
     }
 
 
@@ -65,7 +72,7 @@ public class CheckoutServiceTest {
 
         List<ShippableItem> shippables = checkoutService.getShippableItems(cart.getItems());
 
-        assertEquals(3, shippables.size()); // 2 TVs + 1 Cheese
+        assertEquals(3, shippables.size()); // 2 TVs + 1 model.Cheese
     }
 
     @Test
@@ -74,7 +81,7 @@ public class CheckoutServiceTest {
             checkoutService.checkout(customer, cart);
         });
 
-        assertEquals("Cart is empty.", exception.getMessage());
+        assertEquals("service.Cart is empty.", exception.getMessage());
     }
 
     @Test

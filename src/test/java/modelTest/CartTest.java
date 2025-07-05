@@ -1,4 +1,9 @@
+package modelTest;
+
+import model.*;
 import org.junit.jupiter.api.Test;
+import service.Cart;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
@@ -34,7 +39,7 @@ public class CartTest {
         Exception ex = assertThrows(IllegalArgumentException.class, () -> {
             cart.add(null, 1);
         });
-        assertEquals("Product cannot be null", ex.getMessage());
+        assertEquals("model.Product cannot be null", ex.getMessage());
     }
 
     @Test
@@ -56,7 +61,7 @@ public class CartTest {
         Exception ex = assertThrows(IllegalArgumentException.class, () -> {
             cart.add(expiredCheese, 1);
         });
-        assertEquals("The Product is expired", ex.getMessage());
+        assertEquals("The model.Product is expired", ex.getMessage());
     }
 
     @Test

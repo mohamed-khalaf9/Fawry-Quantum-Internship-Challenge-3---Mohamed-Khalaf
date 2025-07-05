@@ -1,3 +1,9 @@
+package service;
+
+import interfaces.Expirable;
+import model.CartItem;
+import model.Product;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +20,11 @@ public class Cart {
             throw new IllegalArgumentException("Quantity must be greater than 0");
         }
         if(product == null) {
-            throw new IllegalArgumentException("Product cannot be null");
+            throw new IllegalArgumentException("model.Product cannot be null");
         }
         if(product instanceof Expirable) {
             if(((Expirable) product).getExpiryDate().isBefore(LocalDate.now()))
-                throw new IllegalArgumentException("The Product is expired");
+                throw new IllegalArgumentException("The model.Product is expired");
         }
         if(quantity > product.getQuantity()) {
             throw new IllegalArgumentException("The stock not enough");
